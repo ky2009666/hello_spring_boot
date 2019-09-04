@@ -47,7 +47,9 @@ public class HelloController {
      */
     @GetMapping("/showInfo")
     public String showInfo(HttpServletRequest request, HttpServletResponse response) {
-
+        System.out.println("request = " + request + ", response = " + response);
+        System.out.println("request.getSession().getId() = " + request.getSession().getId());
+        System.out.println("request = " + request);
         return request.getContextPath();
     }
 }

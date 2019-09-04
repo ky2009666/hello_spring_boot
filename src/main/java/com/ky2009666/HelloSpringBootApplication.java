@@ -10,7 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HelloSpringBootApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(HelloSpringBootApplication.class, args);
+        SpringApplication application =
+                new SpringApplication(HelloSpringBootApplication.class);
+        application.run(args);
+        //SpringApplication.run(HelloSpringBootApplication.class, args);
     }
 
 }
