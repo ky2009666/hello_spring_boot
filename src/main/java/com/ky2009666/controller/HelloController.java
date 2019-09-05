@@ -50,6 +50,8 @@ public class HelloController {
         System.out.println("request = " + request + ", response = " + response);
         System.out.println("request.getSession().getId() = " + request.getSession().getId());
         System.out.println("request = " + request);
+        int DEFAULT_INITIAL_CAPACITY = 1 << 4;
+        System.out.println("DEFAULT_INITIAL_CAPACITY = " + DEFAULT_INITIAL_CAPACITY);
         return request.getContextPath();
     }
 }
