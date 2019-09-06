@@ -3,6 +3,8 @@ package com.ky2009666.controller;
 import com.ky2009666.properties.ApplicationProperties;
 import org.omg.PortableInterceptor.SUCCESSFUL;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.Assert;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -53,5 +55,20 @@ public class HelloController {
         int DEFAULT_INITIAL_CAPACITY = 1 << 4;
         System.out.println("DEFAULT_INITIAL_CAPACITY = " + DEFAULT_INITIAL_CAPACITY);
         return request.getContextPath();
+    }
+
+    /**
+     * 展示Asert用法
+     *
+     * @param phone
+     * @return
+     */
+    @GetMapping("/showNo")
+    public String showNo(String phone) {
+        //Assert.notNull(phone, "手机号码不能为空");
+        if (StringUtils.isEmpty(phone)) {
+            System.out.println("phone 为空 ");
+        }
+        return phone;
     }
 }
